@@ -71,3 +71,10 @@ function renderCart() {
 
   totalEl.textContent = "₹" + total;
 }
+
+function logout() {
+  localStorage.removeItem("loggedIn");
+  alert("Logged out");
+  window.location.href = "index.html";
+}
+
