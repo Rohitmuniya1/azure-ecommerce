@@ -1,19 +1,36 @@
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fb;
 }
 
+/* ===== NAVBAR ===== */
 header {
-  background: #111;
+  background: #111827;
   color: white;
-  padding: 15px;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
 nav a {
   color: white;
-  margin-right: 15px;
   text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
 }
+
+nav a:hover {
+  color: #38bdf8;
+}
+
 
 .hero {
   padding: 60px;
