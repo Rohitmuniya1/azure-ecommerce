@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Login</h1>
+  <a href="index.html">Home</a>
+</header>
+
+<form id="login-form">
+  <input type="email" id="email" placeholder="Email" required><br><br>
+  <input type="password" id="password" placeholder="Password" required><br><br>
+  <button type="submit">Login</button>
+</form>
+
+<p>
+  New user?
+  <a href="signup.html">Create account</a>
+</p>
+
+<script src="js/app.js"></script>
+<script>
+  document.getElementById("login-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user || user.email !== email || user.password !== password) {
+      alert("Invalid login details ❌");
+      return;
+    }
+
+    localStorage.setItem("loggedIn", "true");
+    alert("Login successful ✅");
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
