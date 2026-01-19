@@ -5,7 +5,7 @@
   <title>Cart</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="renderCart()">
 
 <header>
   <h1>Your Cart</h1>
@@ -14,21 +14,8 @@
 
 <ul id="cart-items"></ul>
 
+<h3>Total: <span id="total">₹0</span></h3>
+
 <script src="js/app.js"></script>
-<script>
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let list = document.getElementById("cart-items");
-
-  if (cart.length === 0) {
-    list.innerHTML = "<li>Cart is empty</li>";
-  } else {
-    cart.forEach(item => {
-      let li = document.createElement("li");
-      li.textContent = item.name + " - ₹" + item.price;
-      list.appendChild(li);
-    });
-  }
-</script>
-
 </body>
 </html>
