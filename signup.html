@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Signup</h1>
+  <a href="index.html">Home</a>
+</header>
+
+<form id="signup-form">
+  <input type="text" id="name" placeholder="Full Name" required><br><br>
+  <input type="email" id="email" placeholder="Email" required><br><br>
+  <input type="password" id="password" placeholder="Password" required><br><br>
+  <button type="submit">Create Account</button>
+</form>
+
+<script>
+  document.getElementById("signup-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const user = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+    alert("Account created ✅ Please login");
+    window.location.href = "login.html";
+  });
+</script>
+
+</body>
+</html>
