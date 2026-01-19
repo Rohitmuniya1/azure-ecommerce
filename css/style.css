@@ -53,3 +53,18 @@ nav a {
 .product button:hover {
   background: #333;
 }
+
+form {
+  padding: 20px;
+}
+
+input {
+  width: 250px;
+  padding: 8px;
+}
+
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
