@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Checkout</h1>
+  <a href="cart.html">Back to Cart</a>
+</header>
+
+<form id="checkout-form">
+  <input type="text" id="name" placeholder="Full Name" required><br><br>
+  <input type="text" id="address" placeholder="Address" required><br><br>
+  <input type="text" id="phone" placeholder="Phone Number" required><br><br>
+
+  <h3>Total: <span id="total">₹0</span></h3>
+
+  <button type="submit">Place Order</button>
+</form>
+
+<script src="js/app.js"></script>
+<script>
+  // show total
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let total = 0;
+  cart.forEach(p => total += p.price * p.qty);
+  document.getElementById("total").innerText = "₹" + total;
+
+  document.getElementById("checkout-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Order placed successfully 🎉");
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
